@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avtomobillar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Avtomobillar</h1>
+    </header>
+    <main>
+        <div class="car-container">
+            <!-- Avtomobillar ro'yxati -->
+            <div class="car" data-id="1" onclick="showModifications('Cobalt')">
+                <img src="rasm/9.png" alt="Cobalt">
+                <h2>Cobalt</h2>
+                <p>Narxi: 147 916 000</p>
+            </div>
+            <div class="car" data-id="2" onclick="showModifications('Lacetti')">
+                <img src="rasm/las.png" alt="Lacetti">
+                <h2>Lacetti</h2>
+                <p>Narxi: 169 118 000</p>
+            </div>
+            <div class="car" data-id="3" onclick="showModifications('Onix')">
+                <img src="rasm/onix.png" alt="Onix">
+                <h2>Onix</h2>
+                <p>Narxi: 176 900 000</p>
+            </div>
+            <div class="car" data-id="4" onclick="showModifications('Malibu-2')">
+                <img src="rasm/GZA.png" alt="Malibu-2">
+                <h2>Malibu-2</h2>
+                <p>Narxi: 419 000 960</p>
+            </div>
+            <div class="car" data-id="5" onclick="showModifications('Damas')">
+                <img src="rasm/da.png" alt="Damas">
+                <h2>Damas</h2>
+                <p>Narxi: 96 932 000</p>
+            </div>
+            <div class="car" data-id="6" onclick="showModifications('Labo')">
+                <img src="rasm/ll.png" alt="Labo">
+                <h2>Labo</h2>
+                <p>Narxi: 96 370 000</p>
+            </div>
+            <div class="car" data-id="7" onclick="showModifications('Tracker')">
+                <img src="rasm/trk.png" alt="Tracker">
+                <h2>Tracker</h2>
+                <p>Narxi: 220 951 360</p>
+            </div>
+            <div class="car" data-id="8" onclick="showModifications('Captiva 5')">
+                <img src="rasm/cap.png" alt="Captiva 5">
+                <h2>Captiva 5</h2>
+                <p>Narxi: 319 900 000</p>
+            </div>
+            <div class="car" data-id="9" onclick="showModifications('Equinox')">
+                <img src="rasm/eqx.png" alt="Equinox">
+                <h2>Equinox</h2>
+                <p>Narxi: 441 000 000</p>
+            </div>
+            <div class="car" data-id="10" onclick="showModifications('Traverse')">
+                <img src="rasm/trv.png" alt="Traverse">
+                <h2>Traverse</h2>
+                <p>Narxi: 737 730 560</p>
+            </div>
+            <div class="car" data-id="11" onclick="showModifications('Tahoe')">
+                <img src="rasm/th.png" alt="Tahoe">
+                <h2>Tahoe</h2>
+                <p>Narxi: 1 109 274 880</p>
+            </div>
+            <div class="car" data-id="12" onclick="showModifications('Orlando')">
+                <img src="car2.jpg" alt="Orlando">
+                <h2>Orlando</h2>
+                <p>Narxi: 250 450 000</p>
+            </div>
+            <div class="car" data-id="13" onclick="showModifications(13)">
+                <img src="car2.jpg" alt="Avtomobil 13">
+                <h2>Avtomobil 2</h2>
+                <p>Narxi: $25,000</p>
+            </div>
+            <div class="car" data-id="14" onclick="showModifications(14)">
+                <img src="car2.jpg" alt="Avtomobil 14">
+                <h2>Avtomobil 2</h2>
+                <p>Narxi: $25,000</p>
+            </div>
+            <div class="car" data-id="15" onclick="showModifications(15)">
+                <img src="car2.jpg" alt="Avtomobil 15">
+                <h2>Avtomobil 2</h2>
+                <p>Narxi: $25,000</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modifikatsiyalar uchun modal oyna -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Modifikatsiyalar</h2>
+            <div id="modal-body">
+                <!-- Modifikatsiyalar bu yerda ko'rsatiladi -->
+            </div>
+            <button onclick="orderCar()">Buyurtma berish</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Avtomobillar. Barcha huquqlar himoyalangan.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+/* Modal oyna uchun stil */
+.modal {
+    display: none; /* Boshlang'ich holatda yashirin */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Yarim shaffof fon */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.close:hover {
+    color: red;
+}
+
+#modal-body {
+    margin: 20px 0;
+}
+
+#modal-body label {
+    display: block;
+    margin: 10px 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #7f95b6, #d1b517b9,#af6510b6,#218d1377); /* Gradient fon */
+}
+
+header {
+    background-color: #3333336b;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.car-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.car {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+}
+
+.car img {
+    width: 100px; /* Rasmning kengligi */
+    height: 100px; /* Rasmning balandligi */
+    border-radius: 10px;
+    object-fit: contain; /* Rasmni kesilmasdan moslashtiradi */
+    background-color: #f0f0f0; /* Rasm atrofidagi bo'sh joyni to'ldirish uchun */
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+footer {
+    background-color: #3333338e;
+    color: white;
+    text-align: center;
+    padding: 4px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
