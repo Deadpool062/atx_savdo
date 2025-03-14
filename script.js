@@ -55,7 +55,7 @@ const modifications = {
 
 // Telegram botga buyurtma ma'lumotlarini yuborish
 const BOT_TOKEN = "8097350099:AAHF0Ajt7b4KGxyk2nK7Fb5CP0p8rp8P9Zs"; // O'z bot tokenizni qo'ying
-const CHAT_ID = "2473947270"; // O'z chat ID ingizni qo'ying
+const CHAT_ID = "724179446"; // O'z chat ID ingizni qo'ying
 
 async function sendOrderToTelegram(userName, userPhone, carId, modification) {
     const message = `
