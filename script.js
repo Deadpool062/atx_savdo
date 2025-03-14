@@ -19,7 +19,7 @@ const modifications = {
     'Malibu-2': [
         { name: "1LT", price: '375 000 640' },
         { name: "2LT", price: '390 000 800' },
-        { name: "LTZ", price: '419 000 960' },
+        { name: "LTZ", price: '419 000 960' }
     ],
     'Damas': [
         { name: "D2 STYLE PLUS", price: '96 932 000' },
@@ -27,7 +27,7 @@ const modifications = {
         { name: "D3 STYLE PLUS pol-gruzavoy", price: '96 449 000' }
     ],
     'Labo': [
-        { name: "LB2 PLUS NEW", price: '96 370 000' },
+        { name: "LB2 PLUS NEW", price: '96 370 000' }
     ],
     'Tracker': [
         { name: " TRK LS PLUS ", price: '220 951 000' },
@@ -38,12 +38,12 @@ const modifications = {
     'Captiva 5': [
         { name: "1LT", price: '299 900 000' },
         { name: "2LT", price: '319 900 000' },
-        { name: "PREMIER", price: '349 900 000' },
+        { name: "PREMIER", price: '349 900 000' }
     ],
     'Equinox': [
         { name: "1LT AWD", price: '408 450 560' },
         { name: "2LT AWD", price: '441 000 000' },
-        { name: "3LT AWD", price: '472 500 000' },
+        { name: "3LT AWD", price: '472 500 000' }
     ],
     'Traverse': [
         { name: "PREMIER AT", price: '737 730 560' }
@@ -57,13 +57,31 @@ const modifications = {
 const BOT_TOKEN = "8097350099:AAHF0Ajt7b4KGxyk2nK7Fb5CP0p8rp8P9Zs"; // O'z bot tokenizni qo'ying
 const CHAT_ID = "724179446"; // O'z chat ID ingizni qo'ying
 
+// Tanlangan modifikatsiya narxini topish
+function getModificationPrice(carId, modificationName) {
+    const carModifications = modifications[carId];
+    if (carModifications) {
+        const modification = carModifications.find(mod => mod.name === modificationName);
+        return modification ? modification.price : null;
+    }
+    return null;
+}
+
 async function sendOrderToTelegram(userName, userPhone, carId, modification) {
+    const now = new Date();
+    const orderDate = now.toLocaleString(); // Sana va vaqtni olish
+
+    // Tanlangan modifikatsiya narxini topish
+    const modificationPrice = getModificationPrice(carId, modification);
+
     const message = `
         Yangi buyurtma!
+        Sana va vaqt: ${orderDate}
         Ism: ${userName}
         Telefon: ${userPhone}
         Avtomobil: ${carId}
         Modifikatsiya: ${modification}
+        Narxi: ${modificationPrice}
     `;
 
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
