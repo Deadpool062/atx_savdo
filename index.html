@@ -69,29 +69,28 @@
                 <p>Narxi: 1 109 274 880</p>
             </div>
             <div class="car" data-id="12" onclick="showModifications('Orlando')">
-                <img src="car2.jpg" alt="Orlando">
+                <img src="rasm/cap.png" alt="Orlando">
                 <h2>Orlando</h2>
                 <p>Narxi: 250 450 000</p>
             </div>
             <div class="car" data-id="13" onclick="showModifications(13)">
-                <img src="car2.jpg" alt="Avtomobil 13">
-                <h2>Avtomobil 2</h2>
+                <img src="rasm/GZA.png" alt="Avtomobil 13">
+                <h2>Avtomobil 13</h2>
                 <p>Narxi: $25,000</p>
             </div>
             <div class="car" data-id="14" onclick="showModifications(14)">
-                <img src="car2.jpg" alt="Avtomobil 14">
-                <h2>Avtomobil 2</h2>
+                <img src="rasm/th.png" alt="Avtomobil 14">
+                <h2>Avtomobil 14</h2>
                 <p>Narxi: $25,000</p>
             </div>
             <div class="car" data-id="15" onclick="showModifications(15)">
-                <img src="car2.jpg" alt="Avtomobil 15">
-                <h2>Avtomobil 2</h2>
+                <img src="rasm/GZA.png" alt="Avtomobil 15">
+                <h2>Avtomobil 15</h2>
                 <p>Narxi: $25,000</p>
             </div>
         </div>
     </main>
-
-    <!-- Modifikatsiyalar uchun modal oyna -->
+    
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -99,12 +98,10 @@
             <div id="modal-body">
                 <!-- Modifikatsiyalar bu yerda ko'rsatiladi -->
             </div>
-
-            <input type="text" id="user-name" placeholder="Ism Familya" required>
+            <input type="text" id="user-name" placeholder="Ismingiz" required>
             <input type="tel" id="user-phone" placeholder="Telefon raqamingiz" required>
-            <input type="hidden" id="car-id" value="">
+            <input type="hidden" id="car-id" value=""> <!-- car-id input elementi -->
             <button onclick="orderCar()">Buyurtma berish</button>
-       
         </div>
     </div>
 
