@@ -53,9 +53,8 @@ const modifications = {
     ]
 };
 
-// Telegram botga buyurtma ma'lumotlarini yuborish
 const BOT_TOKEN = "8097350099:AAHF0Ajt7b4KGxyk2nK7Fb5CP0p8rp8P9Zs"; // O'z bot tokenizni qo'ying
-const CHAT_ID = "724179446"; // O'z chat ID ingizni qo'ying
+const CHAT_IDS = ["724179446", "6082304921", "5382300866","4744063371"]; // Bir nechta chat ID lar
 
 // Tanlangan modifikatsiya narxini topish
 function getModificationPrice(carId, modificationName) {
@@ -84,26 +83,28 @@ async function sendOrderToTelegram(userName, userPhone, carId, modification) {
         Narxi: ${modificationPrice}
     `;
 
-    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-    try {
-        const response = await fetch(url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                chat_id: CHAT_ID,
-                text: message
-            })
-        });
+    // Har bir chat ID uchun xabar yuborish
+    for (const chatId of CHAT_IDS) {
+        const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message
+                })
+            });
 
-        if (response.ok) {
-            alert("Buyurtma muvaffaqiyatli yuborildi!");
-        } else {
-            alert("Xatolik yuz berdi. Iltimos, qayta urunib ko'ring.");
+            if (!response.ok) {
+                console.error(`Xatolik: ${chatId} ga xabar yuborilmadi.`);
+            }
+        } catch (error) {
+            console.error(`Xatolik: ${chatId} ga xabar yuborishda xatolik yuz berdi.`, error);
         }
-    } catch (error) {
-        console.error("Xatolik:", error);
-        alert("Xatolik yuz berdi. Iltimos, qayta urunib ko'ring.");
     }
+
+    alert("Buyurtma muvaffaqiyatli yuborildi!");
 }
 
 // Modal oynani ochish
